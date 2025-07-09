@@ -1,0 +1,202 @@
+[0m[1mmodule.eks_cluster.data.aws_vpc.default: Reading...[0m[0m
+[0m[1mmodule.eks_cluster.data.aws_vpc.default: Read complete after 0s [id=vpc-03b013981a0c322fc][0m
+[0m[1mmodule.eks_cluster.data.aws_subnets.default_subnets: Reading...[0m[0m
+[0m[1mmodule.eks_cluster.data.aws_subnets.default_subnets: Read complete after 0s [id=us-east-1][0m
+[0m[1mmodule.eks_cluster.data.aws_subnet.metadata["subnet-0e054c087817a9a7c"]: Reading...[0m[0m
+[0m[1mmodule.eks_cluster.data.aws_subnet.metadata["subnet-0f3dafb1a90d6e121"]: Reading...[0m[0m
+[0m[1mmodule.eks_cluster.data.aws_subnet.metadata["subnet-089f32453e91e26d7"]: Reading...[0m[0m
+[0m[1mmodule.eks_cluster.data.aws_subnet.metadata["subnet-04336c3556582fbdf"]: Reading...[0m[0m
+[0m[1mmodule.eks_cluster.data.aws_subnet.metadata["subnet-0f0c9fa4f13c1d596"]: Reading...[0m[0m
+[0m[1mmodule.eks_cluster.data.aws_subnet.metadata["subnet-013cfa92f703fc4a5"]: Reading...[0m[0m
+[0m[1mmodule.eks_cluster.data.aws_subnet.metadata["subnet-04336c3556582fbdf"]: Read complete after 0s [id=subnet-04336c3556582fbdf][0m
+[0m[1mmodule.eks_cluster.data.aws_subnet.metadata["subnet-013cfa92f703fc4a5"]: Read complete after 0s [id=subnet-013cfa92f703fc4a5][0m
+[0m[1mmodule.eks_cluster.data.aws_subnet.metadata["subnet-0f3dafb1a90d6e121"]: Read complete after 0s [id=subnet-0f3dafb1a90d6e121][0m
+[0m[1mmodule.eks_cluster.data.aws_subnet.metadata["subnet-089f32453e91e26d7"]: Read complete after 0s [id=subnet-089f32453e91e26d7][0m
+[0m[1mmodule.eks_cluster.data.aws_subnet.metadata["subnet-0e054c087817a9a7c"]: Read complete after 0s [id=subnet-0e054c087817a9a7c][0m
+[0m[1mmodule.eks_cluster.data.aws_subnet.metadata["subnet-0f0c9fa4f13c1d596"]: Read complete after 0s [id=subnet-0f0c9fa4f13c1d596][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # module.eks_cluster.aws_eks_cluster.eks_cluster[0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_cluster" "eks_cluster" {
+      [32m+[0m[0m arn                   = (known after apply)
+      [32m+[0m[0m certificate_authority = (known after apply)
+      [32m+[0m[0m created_at            = (known after apply)
+      [32m+[0m[0m endpoint              = (known after apply)
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m identity              = (known after apply)
+      [32m+[0m[0m name                  = (known after apply)
+      [32m+[0m[0m platform_version      = (known after apply)
+      [32m+[0m[0m role_arn              = (known after apply)
+      [32m+[0m[0m status                = (known after apply)
+      [32m+[0m[0m tags_all              = (known after apply)
+      [32m+[0m[0m version               = "1.32"
+
+      [32m+[0m[0m kubernetes_network_config (known after apply)
+
+      [32m+[0m[0m vpc_config {
+          [32m+[0m[0m cluster_security_group_id = (known after apply)
+          [32m+[0m[0m endpoint_private_access   = false
+          [32m+[0m[0m endpoint_public_access    = true
+          [32m+[0m[0m public_access_cidrs       = (known after apply)
+          [32m+[0m[0m subnet_ids                = [
+              [32m+[0m[0m "subnet-0f0c9fa4f13c1d596",
+              [32m+[0m[0m "subnet-0f3dafb1a90d6e121",
+            ]
+          [32m+[0m[0m vpc_id                    = (known after apply)
+        }
+    }
+
+[1m  # module.eks_cluster.aws_eks_node_group.nodegroup[0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_node_group" "nodegroup" {
+      [32m+[0m[0m ami_type               = (known after apply)
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m capacity_type          = (known after apply)
+      [32m+[0m[0m cluster_name           = (known after apply)
+      [32m+[0m[0m disk_size              = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_types         = (known after apply)
+      [32m+[0m[0m node_group_name        = "default"
+      [32m+[0m[0m node_group_name_prefix = (known after apply)
+      [32m+[0m[0m node_role_arn          = (known after apply)
+      [32m+[0m[0m release_version        = (known after apply)
+      [32m+[0m[0m resources              = (known after apply)
+      [32m+[0m[0m status                 = (known after apply)
+      [32m+[0m[0m subnet_ids             = [
+          [32m+[0m[0m "subnet-0f0c9fa4f13c1d596",
+          [32m+[0m[0m "subnet-0f3dafb1a90d6e121",
+        ]
+      [32m+[0m[0m tags_all               = (known after apply)
+      [32m+[0m[0m version                = (known after apply)
+
+      [32m+[0m[0m scaling_config {
+          [32m+[0m[0m desired_size = 2
+          [32m+[0m[0m max_size     = 2
+          [32m+[0m[0m min_size     = 1
+        }
+
+      [32m+[0m[0m update_config (known after apply)
+    }
+
+[1m  # module.eks_cluster.aws_iam_role.eks_cluster[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role" "eks_cluster" {
+      [32m+[0m[0m arn                   = (known after apply)
+      [32m+[0m[0m assume_role_policy    = jsonencode(
+            {
+              [32m+[0m[0m Statement = [
+                  [32m+[0m[0m {
+                      [32m+[0m[0m Action    = [
+                          [32m+[0m[0m "sts:AssumeRole",
+                          [32m+[0m[0m "sts:TagSession",
+                        ]
+                      [32m+[0m[0m Effect    = "Allow"
+                      [32m+[0m[0m Principal = {
+                          [32m+[0m[0m Service = "eks.amazonaws.com"
+                        }
+                    },
+                ]
+              [32m+[0m[0m Version   = "2012-10-17"
+            }
+        )
+      [32m+[0m[0m create_date           = (known after apply)
+      [32m+[0m[0m force_detach_policies = false
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m managed_policy_arns   = (known after apply)
+      [32m+[0m[0m max_session_duration  = 3600
+      [32m+[0m[0m name                  = "eks-cluster-role"
+      [32m+[0m[0m name_prefix           = (known after apply)
+      [32m+[0m[0m path                  = "/"
+      [32m+[0m[0m tags_all              = (known after apply)
+      [32m+[0m[0m unique_id             = (known after apply)
+
+      [32m+[0m[0m inline_policy (known after apply)
+    }
+
+[1m  # module.eks_cluster.aws_iam_role.eks_node_group[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role" "eks_node_group" {
+      [32m+[0m[0m arn                   = (known after apply)
+      [32m+[0m[0m assume_role_policy    = jsonencode(
+            {
+              [32m+[0m[0m Statement = [
+                  [32m+[0m[0m {
+                      [32m+[0m[0m Action    = "sts:AssumeRole"
+                      [32m+[0m[0m Effect    = "Allow"
+                      [32m+[0m[0m Principal = {
+                          [32m+[0m[0m Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              [32m+[0m[0m Version   = "2012-10-17"
+            }
+        )
+      [32m+[0m[0m create_date           = (known after apply)
+      [32m+[0m[0m force_detach_policies = false
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m managed_policy_arns   = (known after apply)
+      [32m+[0m[0m max_session_duration  = 3600
+      [32m+[0m[0m name                  = "eks-ng-role"
+      [32m+[0m[0m name_prefix           = (known after apply)
+      [32m+[0m[0m path                  = "/"
+      [32m+[0m[0m tags_all              = (known after apply)
+      [32m+[0m[0m unique_id             = (known after apply)
+
+      [32m+[0m[0m inline_policy (known after apply)
+    }
+
+[1m  # module.eks_cluster.aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "cluster_AmazonEKSClusterPolicy" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+      [32m+[0m[0m role       = "eks-cluster-role"
+    }
+
+[1m  # module.eks_cluster.aws_iam_role_policy_attachment.default_AmazonEC2ContainerRegistryReadOnly[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "default_AmazonEC2ContainerRegistryReadOnly" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      [32m+[0m[0m role       = "eks-ng-role"
+    }
+
+[1m  # module.eks_cluster.aws_iam_role_policy_attachment.default_AmazonEKSWorkerNodeMinimalPolicy[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "default_AmazonEKSWorkerNodeMinimalPolicy" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodeMinimalPolicy"
+      [32m+[0m[0m role       = "eks-ng-role"
+    }
+
+[1m  # module.eks_cluster.aws_iam_role_policy_attachment.default_AmazonEKS_CNI_Policy[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "default_AmazonEKS_CNI_Policy" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      [32m+[0m[0m role       = "eks-ng-role"
+    }
+
+[1m  # module.eks_cluster.random_string.suffix[0m will be created
+[0m  [32m+[0m[0m resource "random_string" "suffix" {
+      [32m+[0m[0m id          = (known after apply)
+      [32m+[0m[0m length      = 4
+      [32m+[0m[0m lower       = true
+      [32m+[0m[0m min_lower   = 0
+      [32m+[0m[0m min_numeric = 0
+      [32m+[0m[0m min_special = 0
+      [32m+[0m[0m min_upper   = 0
+      [32m+[0m[0m number      = true
+      [32m+[0m[0m numeric     = true
+      [32m+[0m[0m result      = (known after apply)
+      [32m+[0m[0m special     = false
+      [32m+[0m[0m upper       = true
+    }
+
+[1mPlan:[0m 9 to add, 0 to change, 0 to destroy.
+[0m
+Changes to Outputs:
+  [32m+[0m[0m eks_cluster_id = (known after apply)
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
