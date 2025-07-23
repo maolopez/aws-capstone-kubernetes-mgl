@@ -43,6 +43,20 @@ terraform apply --auto-approve
 IN THE BROWSER
 http://aa01d4dcebaaa40dbad0f3any37-2017226320.us-east-1.elb.amazonaws.com (or similar given)
 
+
 REFERENCES:
-https://github.com/maolopez/ut_anagramma 
+------------------
+
+
+https://github.com/maolopez/ut_anagramma
+
+https://github.com/maolopez/ut-anagramma
+
+https://gitlab.com/maolopez1/ut_anagramma
+
+https://github.com/maolopez/aws-capstone
+
+https://github.com/maolopez/aws-capstone-pipeline-mgl
+
 https://github.com/msutton150/eventsappstart
+
